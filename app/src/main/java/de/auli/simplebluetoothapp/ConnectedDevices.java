@@ -3,8 +3,13 @@ package de.auli.simplebluetoothapp;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 public class ConnectedDevices extends AppCompatActivity {
+    private  BluetoothService service;
+    private  BluetoothService.BluetoothClient client;
+    private  BluetoothService.BluetoothServer server;
+    private TextView txtViewConnAs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
