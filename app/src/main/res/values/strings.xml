@@ -2,7 +2,13 @@
     <string name="app_name">Simple Bluetooth App</string>
     <string name="cmd_turn_off">Turn off</string>
     <string name="cmd_turn_on">Turn on</string>
-    <string name="cmd_get_visible">Get visable</string>
+    <string name="cmd_get_visible">Make visable</string>
     <string name="cmd_list_divices">List divices</string>
     <string name="cmd_search_divices">Search divices</string>
+    <string name="cmd_conn_server">Server</string>
+    <string name="client">Clent</string>
+    <string name="cmd_server">Server</string>
+    <string name="cmd_client">Client</string>
+    <string name="hint_conn">Vebindung</string>
+    <string name="cmd_send">Senden</string>
 </resources>

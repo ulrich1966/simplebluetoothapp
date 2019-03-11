@@ -4,76 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ConnectedDevices">
 
     <Button
-        android:id="@+id/cmd_on"
+        android:id="@+id/cmd_server"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:onClick="onClickOn"
-        android:text="@string/cmd_turn_on"
-        app:layout_constraintEnd_toStartOf="@+id/cmd_off"
+        android:onClick="connAsServer"
+        android:text="@string/cmd_server"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="OnClick" />
 
     <Button
-        android:id="@+id/cmd_off"
+        android:id="@+id/cmd_client"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:onClick="onClickOff"
-        android:text="@string/cmd_turn_off"
+        android:onClick="connAsClient"
+        android:text="@string/cmd_client"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/cmd_on"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="OnClick" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/cmd_visable"
+    <TextView
+        android:id="@+id/txt_connected_as"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:onClick="onClickVisible"
-        android:text="@string/cmd_get_visible"
+        android:hint="@string/hint_conn"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cmd_on"
-        tools:ignore="OnClick" />
+        app:layout_constraintTop_toBottomOf="@+id/cmd_server" />
 
-    <Button
-        android:id="@+id/cmd_divices"
+    <EditText
+        android:id="@+id/txt_in"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:layout_marginStart="8dp"
-        android:onClick="onClickDivices"
-        android:text="@string/cmd_list_divices"
-        app:layout_constraintStart_toEndOf="@+id/cmd_visable"
-        app:layout_constraintTop_toBottomOf="@+id/cmd_off"
-        tools:ignore="OnClick" />
-
-    <Button
-        android:id="@+id/cmd_search"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:layout_marginStart="8dp"
-        android:onClick="onClickSearch"
-        android:text="@string/cmd_search_divices"
+        android:ems="10"
+        android:hint="Text eingeben"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/cmd_divices"
-        app:layout_constraintTop_toBottomOf="@+id/cmd_off"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_connected_as" />
+
+    <Button
+        android:id="@+id/cmd_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/cmd_send"
+        android:onClick="send"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_in"
         tools:ignore="OnClick" />
 
-    <ListView
-        android:id="@+id/livi_divices"
+    <TextView
+        android:id="@+id/txt_content"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="16dp"
-        android:layout_marginBottom="16dp"
+        android:text="Out ..."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cmd_divices" />
+        app:layout_constraintTop_toBottomOf="@+id/cmd_send" />
+
 </android.support.constraint.ConstraintLayout>
