@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(TAG, value);
                 arrayAdapter.add(value);
             }
-        }
+    }
     };
 
     @Override
@@ -52,6 +52,12 @@ public class MainActivity extends AppCompatActivity {
         list = new ArrayList<>();
         arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, list);
         liviDevices.setAdapter(arrayAdapter);
+        liviDevices.setOnItemClickListener((parent, view, position, id) -> {
+            String address_plus = (String) parent.getItemAtPosition(position);
+            String address = address_plus.substring(0, address_plus.indexOf(":")).trim();
+            Intent intent = new Intent(MainActivity.this, ConnectedDevices.class);
+            startActivity(intent);
+        });
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
