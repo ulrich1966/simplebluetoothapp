@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/cmd_on"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:onClick="onClickOn"
+        android:text="@string/cmd_turn_on"
+        app:layout_constraintEnd_toStartOf="@+id/cmd_off"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="OnClick" />
+
+    <Button
+        android:id="@+id/cmd_off"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:onClick="onClickOff"
+        android:text="@string/cmd_turn_off"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cmd_on"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="OnClick" />
+
+    <Button
+        android:id="@+id/cmd_visable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/cmd_get_visible"
+        android:onClick="onClickVisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cmd_on"
+        tools:ignore="OnClick" />
+
+    <Button
+        android:id="@+id/cmd_divices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/cmd_list_divices"
+        android:onClick="onClickDivices"
+        app:layout_constraintStart_toEndOf="@+id/cmd_visable"
+        app:layout_constraintTop_toBottomOf="@+id/cmd_off"
+        tools:ignore="OnClick" />
+
+    <Button
+        android:id="@+id/cmd_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/cmd_search_divices"
+        android:onClick="onClickSearch"
+        app:layout_constraintStart_toEndOf="@+id/cmd_divices"
+        app:layout_constraintTop_toBottomOf="@+id/cmd_off"
+        tools:ignore="OnClick" />
+
+    <ListView
+        android:id="@+id/livi_divices"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cmd_divices" />
+</android.support.constraint.ConstraintLayout>
