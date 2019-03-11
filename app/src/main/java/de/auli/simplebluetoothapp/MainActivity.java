@@ -36,9 +36,10 @@ public class MainActivity extends AppCompatActivity {
         public void onReceive(Context context, Intent intent) {
             if(BluetoothDevice.ACTION_FOUND.equals((intent.getAction()))){
                 BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-                String value = String.format("%s : %s : %s", device.getAddress(), device.getName(), device.createBond());
+                String value = String.format("%s - %s - %s", device.getAddress(), device.getName(), device.createBond());
                 Log.d(TAG, value);
                 arrayAdapter.add(value);
+                //if()
             }
     }
     };
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         liviDevices.setAdapter(arrayAdapter);
         liviDevices.setOnItemClickListener((parent, view, position, id) -> {
             String address_plus = (String) parent.getItemAtPosition(position);
-            String address = address_plus.substring(0, address_plus.indexOf(":")).trim();
+            String address = address_plus.substring(0, address_plus.indexOf("-")).trim();
             Intent intent = new Intent(MainActivity.this, ConnectedDevices.class);
             startActivity(intent);
         });
@@ -99,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
         boundDivices = bluetoothAdapter.getBondedDevices();
         arrayAdapter.clear();
         for (BluetoothDevice device : boundDivices){
-            String value = String.format("%s : %s : %s", device.getAddress(), device.getName(), device.createBond());
+            String value = String.format("%s - %s - %s", device.getAddress(), device.getName(), device.createBond());
             Log.d(TAG, value);
             arrayAdapter.add(value);
         }

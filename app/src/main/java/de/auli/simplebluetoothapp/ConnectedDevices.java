@@ -3,10 +3,12 @@ package de.auli.simplebluetoothapp;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 public class ConnectedDevices extends AppCompatActivity {
+    private static final String TAG = ConnectedDevices.class.getSimpleName();
     private BluetoothService service;
     private BluetoothService.BluetoothClient client;
     private BluetoothService.BluetoothServer server;
@@ -21,6 +23,11 @@ public class ConnectedDevices extends AppCompatActivity {
     }
 
     public synchronized void send(View view) {
+        try{
+            client.start();
+        } catch (Exception e){
+            Log.e(TAG, "Senden fehlgeschlagen", e);
+        }
     }
 
     public synchronized void connAsClient(View view) {
